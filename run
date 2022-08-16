@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -e
+
+function git-hooks:off {
+  # Disable Git hooks from running locally.
+  git config --unset core.hooksPath
+}
+
+function git-hooks:on {
+  # Enable Git hooks to run locally.
+  git config core.hooksPath .githooks
+}
+
+eval "${@}"
